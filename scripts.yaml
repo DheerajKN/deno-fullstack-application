@@ -1,0 +1,11 @@
+scripts:
+  install:
+    - deno run -A https://deno.land/x/aleph/install.ts
+  start:
+    pll:
+      - cd frontend && aleph dev --allow-read -p 9000
+      - cd backend && deno run --allow-net --allow-read --allow-env server.ts
+    env:
+      BACKEND_PORT: 8082
+      BACKEND_URL: http://localhost:8082
+    watch: true
