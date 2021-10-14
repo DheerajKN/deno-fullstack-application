@@ -7,7 +7,7 @@ const port: number = 9001;
 const router = new Router();
 router.get("/", ({ response }: { response: any }) => {
   response.body = {
-    message: "Backend Running",
+    message: "Backe",
   };
 });
 app.use(router.routes());
