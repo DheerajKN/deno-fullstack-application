@@ -6,8 +6,14 @@ export default function App({ Page, pageProps }: { Page: FC, pageProps: Record<s
       <head>
         <meta name="viewport" content="width=device-width" />
       </head>
-      {'Welcome to Aleph'}
-      <br/>
+      <center>
+        {"Welcome to Aleph Frontend"}
+        <br/>
+        <a rel="nav" href="/">Home</a>
+        { " | " }
+        <a rel="nav" href="/post">Post</a>
+        <br/>
+      </center>
       <Page {...pageProps} />
     </main>
   )

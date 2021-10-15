@@ -1,13 +1,13 @@
 import { useDeno } from 'aleph/react'
-import React from 'react'
+import React, {useState} from 'react'
 
 export default function Home() {
-  const post = useDeno(async () => {
-    return await (await fetch('http://localhost:9001')).json();
-  })
+  const [starter, setStarter] = useState(useDeno(async () => {
+    return await (await fetch(Deno.env.get('BACKEND_URL'))).json();
+  }));
   return (
     <>
-      {post.message}
+      {starter.message}
     </>
   )
 }
