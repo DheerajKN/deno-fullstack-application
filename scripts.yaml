@@ -2,7 +2,7 @@ scripts:
   install:
     - deno run -A https://deno.land/x/aleph/install.ts
     - deno install -qAf --unstable https://deno.land/x/denon/denon.ts
-  start:
+  dev:
     cmd:
       pll:
         - cd frontend && aleph dev --allow-env -p 9000
@@ -10,4 +10,11 @@ scripts:
     env:
       BACKEND_PORT: 9001
       BACKEND_URL: http://localhost:9001
-    watch: true
+  prod:
+    cmd:
+      pll:
+        - cd frontend && aleph dev --allow-env -p 9002
+        - cd backend && denon run --allow-net --allow-read --allow-env server.ts
+    env:
+      BACKEND_PORT: 9003
+      BACKEND_URL: http://localhost:9003
