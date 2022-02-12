@@ -18,7 +18,7 @@ then you will need to install velociraptor manually using the command:
 deno install -qAn vr https://deno.land/x/velociraptor@1.2.0/cli.ts
 ```
 
-and then we need to install the **Denon** and **Aleph** packages manually. Which the repository will handle by executing the command
+and then we need to install the **Aleph** and upgrade **Deno** packages manually. Which the repository will handle by executing the command
 
 ```
 vr install
@@ -29,3 +29,7 @@ vr install
 ```
 vr start
 ```
+
+## For Windows systems:
+
+Due to some ongoing issues with vr `&&` doesn't work as intended in Windows. So just replace `&&` with `;` and it should work as expected.
